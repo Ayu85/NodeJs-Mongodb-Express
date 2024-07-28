@@ -1,4 +1,4 @@
-const fs=require('fs')
+const fs = require('fs')
 
 // to create a new file in same directory
 // fs.writeFile("hey.txt","new file created",(err)=>{
@@ -25,7 +25,18 @@ const fs=require('fs')
 // })
 
 //to read a file
-fs.readFile('Notes.md',(err,data)=>{
-    if(err) console.log(err.message);
-    console.log("file read" ,data.toLocaleString());
+// fs.readFile('Notes.md',(err,data)=>{
+//     if(err) console.log(err.message);
+//     console.log("file read" ,data.toLocaleString());
+// })
+
+// *******************************************************//
+//*********creating a http server in node js *************/
+
+const http = require('http')
+const server = http.createServer((req, res) => {
+    res.end("Hello from server")
+    console.log(("server created"));
+    console.log(req)
 })
+server.listen(4900)
