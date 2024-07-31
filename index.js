@@ -24,12 +24,19 @@ const fs = require('fs')
 //     else console.log("folder deleted");
 // })
 
-//to read a file
+// to read a file
 // fs.readFile('Notes.md',(err,data)=>{
 //     if(err) console.log(err.message);
 //     console.log("file read" ,data.toLocaleString());
 // })
 
+
+//to read files and folders in folder
+fs.readdir('node_modules/one-liner-joke',(err,data)=>{
+    if(err) console.log(err);
+    else console.log(data);
+    
+})
 // *******************************************************//
 //*********creating a http server in node js *************/
 
