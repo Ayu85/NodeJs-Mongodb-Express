@@ -6,6 +6,10 @@ const fs = require('fs')
 //     else console.log("file created");
 // })
 
+// to create a new file in same sync directory
+// fs.writeFileSync("heysync.txt","new file created")
+//     console.log("12");
+
 // to append a text to an existing file
 // fs.appendFile("hey.txt"," , append text",(err)=>{
 //     if(err) console.log(err.message);
@@ -32,18 +36,22 @@ const fs = require('fs')
 
 
 //to read files and folders in folder
-fs.readdir('node_modules/one-liner-joke',(err,data)=>{
-    if(err) console.log(err);
-    else console.log(data);
+// fs.readdir('node_modules/one-liner-joke',(err,data)=>{
+//     if(err) console.log(err);
+//     else console.log(data);
     
-})
+// })
 // *******************************************************//
 //*********creating a http server in node js *************/
 
 const http = require('http')
 const server = http.createServer((req, res) => {
-    res.end("Hello from server")
+    // basic routing done in node js
+    if(req.url==='/')
+        res.end("Home page")
+    else if(req.url==='/login')
+        res.end("login page")
     console.log(("server created"));
-    console.log(req)
 })
+
 server.listen(4900)
