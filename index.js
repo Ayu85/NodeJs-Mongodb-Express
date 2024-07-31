@@ -44,14 +44,14 @@ const fs = require('fs')
 // *******************************************************//
 //*********creating a http server in node js *************/
 
-const http = require('http')
-const server = http.createServer((req, res) => {
-    // basic routing done in node js
-    if(req.url==='/')
-        res.end("Home page")
-    else if(req.url==='/login')
-        res.end("login page")
-    console.log(("server created"));
-})
+// const http = require('http')
+// const server = http.createServer((req, res) => {
+//     // basic routing done in node js
+//     if(req.url==='/')
+//         res.end("Home page")
+//     else if(req.url==='/login')
+//         res.end("login page")
+//     console.log(("server created"));
+// })
 
-server.listen(4900)
+// server.listen(4900)
