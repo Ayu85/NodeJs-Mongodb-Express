@@ -16,7 +16,7 @@ app.get('/profiles',(req,res)=>{
 //     res.send("404 not found")
 // })
 app.post('/submitdata',(req,res)=>{
-    console.log(req.query);
+    console.log(req.body);
     res.send("data saved")
     
 })
