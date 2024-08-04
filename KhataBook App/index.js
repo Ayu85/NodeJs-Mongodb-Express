@@ -8,4 +8,7 @@ app.set('view engine','ejs')
 app.get('/',(request,response)=>{
     response.render('index')
 })
+app.get('/create-hisaab',(req,res)=>{
+    res.render('create')
+})
 app.listen(1111)
