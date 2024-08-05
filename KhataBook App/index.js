@@ -7,7 +7,9 @@ app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname,"public")))
 app.get('/', (request, response) => {
-    response.render('index')
+    fs.readdir('./files',(err,files)=>{
+        response.render('index',{files})
+    })
 })
 app.get('/create-hisaab', (request, response) => {
     response.render('create')
@@ -19,11 +21,11 @@ app.post('/createnewhisaab', (req, res) => {
     const day = String(now.getDate()).padStart(2, '0');
     const month = String(now.getMonth() + 1).padStart(2, '0'); // getMonth() returns 0-11, so add 1
     const year = now.getFullYear();
-    const filename=`./files/${`${day}-${month}-${year}`}.txt`;
+    const filename=`./files/${req.body.title}.txt`;
     fs.writeFile(filename, req.body.hisaab , (err) => {
         if (err) res.send('error')
         else
-            res.send("created")
+            res.redirect("/")
     })
     console.log(req.body)
 
