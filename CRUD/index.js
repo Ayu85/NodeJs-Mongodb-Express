@@ -5,6 +5,8 @@ const users=fs.readFileSync('./mock_data/users.json')
 server.get('/users',(req,res)=>{
     res.setHeader('Content-Type','application/json')
     res.send(users);
+    console.log(req.url);
+    
 })
 
 
