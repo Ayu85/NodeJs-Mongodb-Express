@@ -30,4 +30,10 @@ app.post('/createnewhisaab', (req, res) => {
     console.log(req.body)
 
 })
+app.get('/edit/:index',(req,res)=>{
+  fs.readdir(`./files/${req.params}`,(err,file)=>{
+    res.render("Edit",{file})
+  })
+})
+
 app.listen(1111)

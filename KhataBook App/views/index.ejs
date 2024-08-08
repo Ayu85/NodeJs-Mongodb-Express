@@ -15,12 +15,12 @@
        
         <div class="flex justify-center items-center">
             <div class='text-white flex justify-center items-center mt-10 gap-4 flex-col bg-white py-5 w-max px-10 rounded-lg'>
-                <% files.map((files)=>{ %>
+                <% files.map((files,ind)=>{ %>
                     <div class='flex '>
                         <h1 class='bg-blue-600 w-44 text-center py-2'>
-                            <%= files.slice(0,-5) %>
+                            <%= files %>
                         </h1>
-                        <a href="/edit ">
+                        <a href="edit/<%= ind %>" >
                             <h1 class='bg-red-700 px-3 py-3 text-white cursor-pointer hover:bg-black transition-all'>Edit
                             </h1>
                         </a>
